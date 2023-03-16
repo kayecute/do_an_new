@@ -8,9 +8,7 @@ subprocess.run(["python", "D:/project passsss/5-giaodien/main.py"])
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
-        MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(600, 350)
-
+        MainWindow.resize(600, 400)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.img = QtWidgets.QLabel(self.centralwidget)
@@ -49,9 +47,12 @@ class Ui_MainWindow(object):
         self.btn_real = QtWidgets.QPushButton(self.centralwidget)
         self.btn_real.setGeometry(QtCore.QRect(420, 270, 131, 61))
         self.btn_real.setObjectName("btn_real")
+        self.btn_start = QtWidgets.QPushButton(self.centralwidget)
+        self.btn_start.setGeometry(QtCore.QRect(220, 200, 131, 61))
+        self.btn_start.setObjectName("btn_start")
         self.txt_img = QtWidgets.QTextEdit(self.centralwidget)
         self.txt_img.setEnabled(True)
-        self.txt_img.setGeometry(QtCore.QRect(400, 130, 141, 131))
+        self.txt_img.setGeometry(QtCore.QRect(420, 130, 131, 131))
         self.txt_img.setObjectName("txt_img")
 
         MainWindow.setCentralWidget(self.centralwidget)
@@ -61,7 +62,6 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
-
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "ĐỒ ÁN TỐT NGHIỆP"))
@@ -71,7 +71,7 @@ class Ui_MainWindow(object):
         self.btn_img.setText(_translate("MainWindow", "IMGAGE"))
         self.btn_vid.setText(_translate("MainWindow", "VIDEO"))
         self.btn_real.setText(_translate("MainWindow", "REALTIME"))
-
+        self.btn_start.setText(_translate("MainWindow", "Start"))
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)

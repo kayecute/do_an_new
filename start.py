@@ -28,9 +28,12 @@ class MainWindow:
         self.uic.btn_vid.clicked.connect(self.BrowserVid)
         #self.uic.btn_vid_detec.clicked.connect(self.Detected_Vid)
         self.uic.btn_real.clicked.connect(self.Detected_Real)
+        self.uic.btn_start.clicked.connect(self.Start)
         self.thread={};
     def show(self):
         self.main_win.show()
+    def Start(self):
+        subprocess.run(["python", "./quanlybaidoxe.py"])
     def BrowserImg(self):
         subprocess.run(["python", "./Main.py"])
     def BrowserVid(self):

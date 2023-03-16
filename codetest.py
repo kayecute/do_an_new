@@ -287,17 +287,26 @@ def update_gui():
 
     table2.delete(*table2.get_children())
     fetch_data_table2()
-
+    root.after(3000, update_gui) 
 
 #Tạo GUI - Giao diện chương trình
 root = Tk()
-root.geometry('1200x800')
-
+root.geometry('1000x400')
+input_frame = Frame(root)
+input_frame.pack(pady=20)
+# # Mở camera và update
+# clear_button = Button(input_frame, text="Start", command=update_gui)
+# clear_button.pack(side=LEFT, padx=10)
 #Khung Input Name
 input_frame = Frame(root)
 input_frame.pack(pady=20)
 
 clear_button = Button(input_frame, text="Clear All Data", command=clear_data)
+clear_button.pack(side=LEFT, padx=10)
+input_frame = Frame(root)
+input_frame.pack(pady=20)
+
+clear_button = Button(input_frame, text="Exit", command=exit)
 clear_button.pack(side=LEFT, padx=10)
 #Khung Output Tables
 output_frame = Frame(root)
@@ -317,7 +326,6 @@ for header in table1_headers:
     table1.column(header, width=120)
 
 table1.pack(fill=BOTH, expand=YES)
-
 fetch_data_table1()
 
 #Table 2
@@ -334,6 +342,7 @@ for header in table2_headers:
     table2.column(header, width=120)
 
 table2.pack(fill=BOTH, expand=YES)
-
 fetch_data_table2()
+# Cập nhật GUI bằng cách lặp lại hàm update_gui() sau mỗi 3s
+root.after(3000, update_gui) 
 root.mainloop()
