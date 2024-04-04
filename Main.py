@@ -16,8 +16,9 @@ import PossiblePlate
 SCALAR_BLACK = (0.0, 0.0, 0.0)
 SCALAR_WHITE = (255.0, 255.0, 255.0)
 SCALAR_YELLOW = (0.0, 255.0, 255.0)
-SCALAR_GREEN = (0.0, 255.0, 0.0)
+# SCALAR_GREEN = (0.0, 255.0, 0.0)
 SCALAR_RED = (0.0, 0.0, 255.0)
+SCALAR_GREEN = (0, 255, 0)
 
 showSteps = True  #Bật True để hiện và sử dụng các bước trong DetectChars và DetectPlates
 
@@ -77,11 +78,13 @@ def main():
 # end main
 
 ###################################################################################################
-def drawGreenRectangleAroundPlate(imgOriginalScene, licPlate):
+def drawGreenRectangleAroundPlate(imgOriginalScene, licPlate): 
 
-    p2fRectPoints = cv2.boxPoints(licPlate.rrLocationOfPlateInScene)            # Dòng lệnh màu để đánh dấu trong ảnh nhận diện
+    p2fRectPoints = cv2.boxPoints(licPlate.rrLocationOfPlateInScene)
 
-    cv2.line(imgOriginalScene, tuple(p2fRectPoints[0]), tuple(p2fRectPoints[1]), SCALAR_GREEN, 2)         # draw 4 red lines
+    p2fRectPoints = np.intp(p2fRectPoints)  # Chuyển đổi vị trí các điểm về kiểu số nguyên chính xác
+
+    cv2.line(imgOriginalScene, tuple(p2fRectPoints[0]), tuple(p2fRectPoints[1]), SCALAR_GREEN, 2)
     cv2.line(imgOriginalScene, tuple(p2fRectPoints[1]), tuple(p2fRectPoints[2]), SCALAR_GREEN, 2)
     cv2.line(imgOriginalScene, tuple(p2fRectPoints[2]), tuple(p2fRectPoints[3]), SCALAR_GREEN, 2)
     cv2.line(imgOriginalScene, tuple(p2fRectPoints[3]), tuple(p2fRectPoints[0]), SCALAR_GREEN, 2)
