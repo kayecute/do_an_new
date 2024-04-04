@@ -64,10 +64,10 @@ class Ui_MainWindow(object):
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "ĐỒ ÁN TỐT NGHIỆP"))
-        self.label_2.setText(_translate("MainWindow", "ĐỒ ÁN TỐT NGHIỆP"))
+        #MainWindow.setWindowTitle(_translate("MainWindow", "ĐỒ ÁN TỐT NGHIỆP"))
+        #self.label_2.setText(_translate("MainWindow", "ĐỒ ÁN TỐT NGHIỆP"))
         self.label_3.setText( _translate("MainWindow", "NHẬN DIỆN BIỂN SỐ XE "))
-        self.label_6.setText(_translate("MainWindow", "DTC1854802010113-TRẦN TRUNG KIÊN"))
+        #self.label_6.setText(_translate("MainWindow", "DTC1854802010113-TRẦN TRUNG KIÊN"))
         self.btn_img.setText(_translate("MainWindow", "IMGAGE"))
         self.btn_vid.setText(_translate("MainWindow", "VIDEO"))
         self.btn_real.setText(_translate("MainWindow", "REALTIME"))
